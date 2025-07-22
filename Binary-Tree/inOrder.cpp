@@ -1,4 +1,4 @@
-1. Recussive method:- 
+1. Recursive method:- 
 
   class Solution {
 public:
@@ -12,5 +12,33 @@ public:
         vector<int>ans;
         inOrder(root,ans);
         return ans;
+    }
+};
+
+2. Iterative method:-
+
+  class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+       stack<TreeNode*>st;
+       TreeNode* temp = root;
+       vector<int>inOrder;
+
+       while(true){
+        if(temp!=NULL){
+            st.push(temp);
+            temp = temp->left;
+        }
+        else{
+            if(st.empty() == true) break;
+            temp = st.top();
+            st.pop();
+            inOrder.push_back(temp->val);
+            temp = temp->right;
+        }
+       }
+
+       return inOrder;
+
     }
 };
