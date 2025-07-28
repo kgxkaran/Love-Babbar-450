@@ -29,8 +29,6 @@ int main(){
 
 
 
-
-
 Approach 1 :- 
 
 
@@ -48,5 +46,26 @@ Approach 1 :-
             }
         }
         return maxi;
+    }
+};
+
+Approach 2:-  Kadene's Algorithm 
+
+  class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+       int curr_sum = 0;
+       int maxi = nums[0];
+       int n = nums.size();
+
+       for(int i = 0; i < n; i++){
+        curr_sum += nums[i];
+        maxi = max(maxi,curr_sum);
+        if(curr_sum < 0){
+            curr_sum = 0;
+        }
+       }
+       
+       return maxi;
     }
 };
