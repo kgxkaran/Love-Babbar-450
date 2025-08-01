@@ -1,3 +1,5 @@
+Find the index of the first element in a sorted array that is greater than or equal to x.
+
 #include<bits/stdc++.h>
 using namespace std;
 
