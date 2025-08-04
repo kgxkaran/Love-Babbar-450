@@ -3,14 +3,14 @@ https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
-        int low = 0;
+    bool search(vector<int>& nums, int target) {
+         int low = 0;
         int high = nums.size()-1;
         while(low <= high){
             int mid = low + (high-low)/2;
-            if(nums[mid] == target) return mid;
+            if(nums[mid] == target) return true;
 
-             // Duplicate case — can't decide sorted part
+               // Duplicate case — can't decide sorted part
             if(nums[low] == nums[mid]){
                 low++;
                 continue;
@@ -30,6 +30,6 @@ public:
                 }
             }
         }
-        return -1;
+        return false;
     }
 };
