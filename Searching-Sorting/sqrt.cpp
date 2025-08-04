@@ -23,3 +23,13 @@ public:
         return ans;
     }
 };
+
+| Expression | Type                 |
+| ---------- | -------------------- |
+| `1`        | `int`                |
+| `1L`       | `long`               |
+| `1LL`      | `long long`          |
+| `1.0`      | `double`             |
+| `1.0f`     | `float`              |
+| `1ULL`     | `unsigned long long` |
+
